@@ -114,15 +114,15 @@ def asyncAlgo(gameObj, maxDepth, callback):
 
 def evaluate(state, gameObj):
     bias_matrix = [
-        [0, 1, 2, 8],
-        [1, 2, 2, 8],
-        [2, 2, 12, 16],
+        [0, 0, 2, 8],
+        [0, 2, 2, 8],
+        [2, 2, 16, 16],
         [8, 8, 16, 64]
     ]
 
     matrix, rating = mmult(bias_matrix, state)
 
-    # rating = rating * len(gameObj.find_valid_moves())
+    # rating *= len(gameObj.find_valid_moves())
 
     return rating
     
