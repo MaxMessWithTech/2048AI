@@ -53,14 +53,14 @@ while running:
         for gameMove in moves:
             gameObjCopy.move(gameMove, place=True)
 
-        accualEval = algo.evaluate(gameObjCopy.state, gameObjCopy)
+        actualEval = algo.evaluate(gameObjCopy.state, gameObjCopy)
         simEval = (moveEval / moveBias)
 
         # print(bestState)
-        accuarcy = round(min(accualEval, simEval) / max(accualEval, simEval) * 100, 2)
-        stateAccuarcy = round(algo.matrixSimilarity(gameObjCopy.state, bestState) / 36 * 100, 2)
+        accuracy = round(min(actualEval, simEval) / max(actualEval, simEval) * 100, 2)
+        stateAccuracy = round(algo.matrixSimilarity(gameObjCopy.state, bestState) / 36 * 100, 2)
 
-        print(f"Predicted Eval/eval accuarcy: {accuarcy}% | State accuracy: {stateAccuarcy}%", end="\r")
+        print(f"Predicted Eval/eval accuracy: {accuracy}% | State accuracy: {stateAccuracy}%", end="\r")
     except IndexError:
         score, highVal = gameObj.endStats()
         print(

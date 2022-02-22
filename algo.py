@@ -105,12 +105,10 @@ def algo(gameObj, maxDepth, moves=[], depth=1, placeBias=1, curMax=0, allEvals=[
 
     return highestEval, bestMoveSeq, highestBias, allEvals, bestState
 
-
 def asyncAlgo(gameObj, maxDepth, callback):
     moveEval, moves, moveBias, allEvals = algo(gameObj, maxDepth)
     # print("Async Algo done")
     callback(moveEval, moves, moveBias, allEvals)
-    
 
 def evaluate(state, gameObj):
     bias_matrix = [
